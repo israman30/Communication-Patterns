@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol SideSelctionDelegate {
+    func didChooseSide(img: UIImage, name: String, color: UIColor)
+}
+
 class ViewController: UIViewController {
+    
+    var selectionDelegate: SideSelctionDelegate?
     
     let capTeam: UIButton = {
         let iv = UIButton()
@@ -28,12 +34,14 @@ class ViewController: UIViewController {
 
     @objc func handleIronTeam(){
         let ironManTeam = IronManTeam()
+        selectionDelegate?.didChooseSide(img: UIImage(named: "ca")!, name: "Captain America", color: .blue)
         navigationController?.pushViewController(ironManTeam, animated: true)
         print("Iron Team")
     }
     
     @objc func handleCapTeam(){
         let captainTeam = CaptainTeam()
+        selectionDelegate?.didChooseSide(img: UIImage(named: "iron")!, name: "Iron Man", color: .red)
         navigationController?.pushViewController(captainTeam, animated: true)
         print("Cap Team")
     }

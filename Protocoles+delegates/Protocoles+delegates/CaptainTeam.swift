@@ -10,9 +10,23 @@ import UIKit
 
 class CaptainTeam: UIViewController {
     
+    let imageView: UIImageView = {
+        let iv = UIImageView()
+        iv.backgroundColor = .blue
+        iv.translatesAutoresizingMaskIntoConstraints = false
+        return iv
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .blue
+        view.backgroundColor = .white
+        
+        view.addSubview(imageView)
+        
+        imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 150).isActive = true
+        imageView.widthAnchor.constraint(equalToConstant: 250).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
     }
 }
