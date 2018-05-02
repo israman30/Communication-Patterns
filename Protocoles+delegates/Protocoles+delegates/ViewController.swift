@@ -51,7 +51,7 @@ class ViewController: UIViewController {
         capTeam.heightAnchor.constraint(equalToConstant: 200).isActive = true
         
         ironTeam.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        ironTeam.topAnchor.constraint(equalTo: view.topAnchor, constant: 300).isActive = true
+        ironTeam.topAnchor.constraint(equalTo: view.topAnchor, constant: 400).isActive = true
         ironTeam.widthAnchor.constraint(equalToConstant: 250).isActive = true
         ironTeam.heightAnchor.constraint(equalToConstant: 200).isActive = true
     }
