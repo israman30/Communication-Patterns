@@ -18,6 +18,18 @@ class ViewController: UIViewController {
         return iv
     }()
     
+    let ironTeam: UIButton = {
+        let iv = UIButton()
+        iv.translatesAutoresizingMaskIntoConstraints = false
+        iv.setImage(UIImage(named: "iron"), for: .normal)
+        iv.addTarget(self, action: #selector(handleIronTeam), for: .touchUpInside)
+        return iv
+    }()
+
+    @objc func handleIronTeam(){
+        print("Iron Team")
+    }
+    
     @objc func handleCapTeam(){
         print("Cap Team")
     }
@@ -31,10 +43,17 @@ class ViewController: UIViewController {
     
     func setView(){
         view.addSubview(capTeam)
+        view.addSubview(ironTeam)
         
         capTeam.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         capTeam.topAnchor.constraint(equalTo: view.topAnchor, constant: 150).isActive = true
         capTeam.widthAnchor.constraint(equalToConstant: 250).isActive = true
-        capTeam.heightAnchor.constraint(equalToConstant: 200).isActive = true    }
+        capTeam.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        
+        ironTeam.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        ironTeam.topAnchor.constraint(equalTo: view.topAnchor, constant: 300).isActive = true
+        ironTeam.widthAnchor.constraint(equalToConstant: 250).isActive = true
+        ironTeam.heightAnchor.constraint(equalToConstant: 200).isActive = true
+    }
 }
 
