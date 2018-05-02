@@ -42,6 +42,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .white
+        navigationController?.navigationBar.barTintColor = .white
+        navigationItem.title = "Pick your team"
         setView()
     }
     
