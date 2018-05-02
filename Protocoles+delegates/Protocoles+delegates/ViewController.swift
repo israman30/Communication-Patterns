@@ -27,10 +27,14 @@ class ViewController: UIViewController {
     }()
 
     @objc func handleIronTeam(){
+        let ironManTeam = IronManTeam()
+        navigationController?.pushViewController(ironManTeam, animated: true)
         print("Iron Team")
     }
     
     @objc func handleCapTeam(){
+        let captainTeam = CaptainTeam()
+        navigationController?.pushViewController(captainTeam, animated: true)
         print("Cap Team")
     }
 
