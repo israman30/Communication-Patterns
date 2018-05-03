@@ -57,10 +57,10 @@ class ViewController: UIViewController {
         imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 200).isActive = true
         imageView.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
-        imageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 250).isActive = true
     
         sideLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        sideLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 400).isActive = true
+        sideLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 440).isActive = true
         sideLabel.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
         sideLabel.heightAnchor.constraint(equalToConstant: 80).isActive = true
     }
@@ -68,9 +68,10 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: SelectYourSideDelegate {
-    func didSelectSide(img: UIImage, name: String) {
+    func didSelectSide(img: UIImage, name: String, color: UIColor) {
         imageView.image = img
         sideLabel.text = name
+        view.backgroundColor = color
     }
 }
 

@@ -9,8 +9,11 @@
 import UIKit
 
 protocol SelectYourSideDelegate {
-    func  didSelectSide(img: UIImage, name: String)
+    func  didSelectSide(img: UIImage, name: String, color: UIColor)
 }
+
+let captainColor = UIColor(red: 0/255, green: 26/255, blue: 77/255, alpha: 1)
+let ironManColor = UIColor(red: 128/255, green: 0/255, blue: 0/255, alpha: 1)
 
 class CaptainTeam: UIViewController {
     
@@ -34,12 +37,12 @@ class CaptainTeam: UIViewController {
     
     @objc func handleCaptainSide(){
         print("work")
-        selectedSideDelegate.didSelectSide(img: UIImage(named: "team-cap")!, name: "Captain Side")
+        selectedSideDelegate.didSelectSide(img: UIImage(named: "team-cap")!, name: "Captain Side", color: captainColor)
         dismiss(animated: true, completion: nil)
     }
     
     @objc func handleIronManSide(){
-        selectedSideDelegate.didSelectSide(img: UIImage(named: "team-iron")!, name: "Iron Man Side")
+        selectedSideDelegate.didSelectSide(img: UIImage(named: "team-iron")!, name: "Iron Man Side", color: ironManColor)
         dismiss(animated: true, completion: nil)
     }
     
