@@ -42,7 +42,7 @@ extension ViewController: SelectYourSideDelegate {
 | <img src="img/cap.png" alt="main" width="250" height="500" /> <img src="img/iron.png" alt="main" width="250" height="500" /> |
 | *Once you pick a team. Receiver/Main VC will be delegated to do something, depending on what you pick* |
 
-## Notification Center & Observers
+## Notification Center
 
 >  A notification dispatch mechanism that enables the broadcast of information to registered observers.
 
