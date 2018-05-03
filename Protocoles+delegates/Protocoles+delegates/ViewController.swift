@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     
     let imageView: UIImageView = {
         let iv = UIImageView()
+        iv.image = UIImage(named: "civil")
         iv.backgroundColor = .yellow
         iv.translatesAutoresizingMaskIntoConstraints = false
         return iv
@@ -29,6 +30,7 @@ class ViewController: UIViewController {
         let label = UILabel()
         label.text = "Pick a Side"
         label.textAlignment = .center
+        label.font = UIFont.boldSystemFont(ofSize: 30)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -43,7 +45,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(red: 64/255, green: 64/255, blue: 64/255, alpha: 1)
         
         view.addSubview(selectionBtn)
         view.addSubview(imageView)
@@ -57,9 +59,9 @@ class ViewController: UIViewController {
         imageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
     
         sideLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        sideLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 500).isActive = true
+        sideLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 400).isActive = true
         sideLabel.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
-        sideLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        sideLabel.heightAnchor.constraint(equalToConstant: 80).isActive = true
     }
     
 }
