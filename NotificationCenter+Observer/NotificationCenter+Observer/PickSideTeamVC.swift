@@ -17,6 +17,7 @@ class PickSideTeamVC: UIViewController {
     lazy var imageView: UIImageView = {
         let iv = UIImageView(image: UIImage(named: "ca"))
         iv.translatesAutoresizingMaskIntoConstraints = false
+        iv.contentMode = .scaleAspectFill
         iv.isUserInteractionEnabled = true
         iv.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleCaptainSide)))
         return iv
@@ -25,6 +26,7 @@ class PickSideTeamVC: UIViewController {
     lazy var imageView2: UIImageView = {
         let iv = UIImageView(image: UIImage(named: "iron"))
         iv.translatesAutoresizingMaskIntoConstraints = false
+        iv.contentMode = .scaleAspectFill
         iv.isUserInteractionEnabled = true
         iv.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleIronManSide)))
         return iv

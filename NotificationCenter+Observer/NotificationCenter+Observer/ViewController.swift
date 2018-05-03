@@ -14,6 +14,8 @@ let ironManTeamKey = "iron.team.key"
 
 class ViewController: UIViewController {
     
+    let civilWarColor = UIColor(red: 64/255, green: 64/255, blue: 64/255, alpha: 1)
+    
     // Sub.MARK: - Notification names
     let steve = Notification.Name(captainTeamKey)
     let tony = Notification.Name(ironManTeamKey)
@@ -24,8 +26,9 @@ class ViewController: UIViewController {
     }
     
     // MARK: - Add Observer
-    // This function will observe the broadcast information sent it by the selection VC, using key values for each observer.
-    func createObserver(){
+    /* This function will observe the broadcast information sent it by the selection VC, using key values for each observer.
+    */
+    func createObservers(){
         // Steve Rogers Observers
         NotificationCenter.default.addObserver(self, selector: #selector(updateImage(notf:)), name: steve, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateName(notf:)), name: steve, object: nil)
@@ -37,6 +40,7 @@ class ViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(updateView(notf:)), name: tony, object: nil)
     }
     
+    // MARK: - Action block checks rather is there information for either team and trigger the data as soon observer find the right key.
     @objc func updateImage(notf: NSNotification){
         let isCapTeam = notf.name == steve
         let img = isCapTeam ? UIImage(named: "team-cap")! : UIImage(named: "team-iron")!
@@ -55,12 +59,10 @@ class ViewController: UIViewController {
         view.backgroundColor = viewColor
     }
     
-    let civilWarColor = UIColor(red: 64/255, green: 64/255, blue: 64/255, alpha: 1)
-    
     let imageView: UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage(named: "civil")
-        iv.backgroundColor = .yellow
+        iv.contentMode = .scaleAspectFill
         iv.translatesAutoresizingMaskIntoConstraints = false
         return iv
     }()
@@ -83,17 +85,17 @@ class ViewController: UIViewController {
         return label
     }()
     
+    // MARK: - Action to segue to next VC
     @objc func handleSelectSide(){
         let pickSideTeam = PickSideTeamVC()
         present(pickSideTeam, animated: true, completion: nil)
-        print("Works")
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         setView()
-        createObserver()
+        createObservers()
     }
 }
 
