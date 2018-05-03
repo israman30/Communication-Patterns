@@ -39,10 +39,16 @@ class PickSideTeamVC: UIViewController {
 // MARK: - extension contain actions to select team
 extension PickSideTeamVC {
     @objc func handleCaptainSide(){
+        let name = Notification.Name(rawValue: captainTeamKey)
+        // This line sends a notification that the button was tapped
+        NotificationCenter.default.post(name: name, object: nil)
         dismiss(animated: true, completion: nil)
     }
     
     @objc func handleIronManSide(){
+        let name = Notification.Name(rawValue: ironManTeamKey)
+        // Notifies that the button was tap
+        NotificationCenter.default.post(name: name, object: nil)
         dismiss(animated: true, completion: nil)
     }
 }

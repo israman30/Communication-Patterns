@@ -8,7 +8,34 @@
 
 import UIKit
 
+let captainTeamKey = "cap.team.key"
+let ironManTeamKey = "iron.team.key"
+
 class ViewController: UIViewController {
+    
+    let steve = Notification.Name(captainTeamKey)
+    let tony = Notification.Name(ironManTeamKey)
+    
+    // We remove the observer after are been use - deini will deallocate them from memory
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    func createObserver(){
+        NotificationCenter.default.addObserver(self, selector: <#T##Selector#>, name: <#T##NSNotification.Name?#>, object: <#T##Any?#>)
+    }
+    
+    func updateImage(notf: NSNotification){
+        
+    }
+    
+    func updateName(notf: NSNotification){
+        
+    }
+    
+    func updateView(notf: NSNotification){
+        
+    }
     
     let civilWarColor = UIColor(red: 64/255, green: 64/255, blue: 64/255, alpha: 1)
     
