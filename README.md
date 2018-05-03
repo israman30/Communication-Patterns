@@ -44,7 +44,7 @@ extension ViewController: SelectYourSideDelegate {
 
 ## Notification Center
 
->  A notification dispatch mechanism that enables the broadcast of information to registered observers.
+>  A notification dispatch mechanism that enables the **broadcast** of information to registered observers.
 
 [NSNotification Center Documentation](https://developer.apple.com/documentation/foundation/nsnotificationcenter)
 
