@@ -38,5 +38,4 @@ extension ViewController: SelectYourSideDelegate {
 |:--:|
 | *Main and Sender.- "Pick a Team"* |
 | <img src="img/cap.png" alt="main" width="250" height="500" /> <img src="img/iron.png" alt="main" width="250" height="500" /> |
-|:--:|
-| *Sender Protocol* |
+| *Once you pick a team. Will be delegated depends on what you pick* |
