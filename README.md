@@ -35,4 +35,5 @@ extension ViewController: SelectYourSideDelegate {
 }
 ```
 <img src="img/main.png" alt="main" width="250" height="500" />
+->
 ![alt text](img/main.png =220x)
