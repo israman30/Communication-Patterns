@@ -29,6 +29,7 @@ class ViewController: UIViewController {
     let sideLabel: UILabel = {
         let label = UILabel()
         label.text = "Pick a Side"
+        label.textColor = .white
         label.textAlignment = .center
         label.font = UIFont.boldSystemFont(ofSize: 30)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -38,7 +39,7 @@ class ViewController: UIViewController {
     @objc func handleSelectSide(){
         let captainController = CaptainTeam()
         captainController.selectedSideDelegate = self
-        navigationController?.pushViewController(captainController, animated: true)
+        present(captainController, animated: true, completion: nil)
         print("Select Side")
     }
     
@@ -69,6 +70,7 @@ class ViewController: UIViewController {
 extension ViewController: SelectYourSideDelegate {
     func didSelectSide(img: UIImage, name: String) {
         imageView.image = img
+        sideLabel.text = name
     }
 }
 

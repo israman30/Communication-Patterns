@@ -40,7 +40,7 @@ class CaptainTeam: UIViewController {
     
     @objc func handleIronManSide(){
         selectedSideDelegate.didSelectSide(img: UIImage(named: "team-iron")!, name: "Iron Man Side")
-        print("Iron man side")
+        dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
