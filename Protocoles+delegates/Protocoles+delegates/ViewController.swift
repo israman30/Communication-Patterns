@@ -8,66 +8,32 @@
 
 import UIKit
 
-protocol SideSelctionDelegate {
-    func didChooseSide(img: UIImage, name: String, color: UIColor)
-}
-
 class ViewController: UIViewController {
     
-    var selectionDelegate: SideSelctionDelegate?
-    
-    let capTeam: UIButton = {
-        let iv = UIButton()
-        iv.translatesAutoresizingMaskIntoConstraints = false
-        iv.setImage(UIImage(named: "ca"), for: .normal)
-        iv.addTarget(self, action: #selector(handleCapTeam), for: .touchUpInside)
-        return iv
+    let selectionBtn: UIButton = {
+        let btn = UIButton()
+        btn.backgroundColor = .blue
+        btn.setTitle("Select Side", for: .normal)
+        btn.addTarget(self, action: #selector(handleSelectSide), for: .touchUpInside)
+        return btn
     }()
     
-    let ironTeam: UIButton = {
-        let iv = UIButton()
-        iv.translatesAutoresizingMaskIntoConstraints = false
-        iv.setImage(UIImage(named: "iron"), for: .normal)
-        iv.addTarget(self, action: #selector(handleIronTeam), for: .touchUpInside)
-        return iv
-    }()
-
-    @objc func handleIronTeam(){
-        let ironManTeam = IronManTeam()
-        selectionDelegate?.didChooseSide(img: UIImage(named: "ca")!, name: "Captain America", color: .blue)
-        navigationController?.pushViewController(ironManTeam, animated: true)
-        print("Iron Team")
+    
+    @objc func handleSelectSide(){
+        let captainController = CaptainTeam()
+        navigationController?.pushViewController(captainController, animated: true)
+        print("Select Side")
     }
     
-    @objc func handleCapTeam(){
-        let captainTeam = CaptainTeam()
-        selectionDelegate?.didChooseSide(img: UIImage(named: "iron")!, name: "Iron Man", color: .red)
-        navigationController?.pushViewController(captainTeam, animated: true)
-        print("Cap Team")
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .white
-        navigationController?.navigationBar.barTintColor = .white
-        navigationItem.title = "Pick your team"
-        setView()
+        
+        view.addSubview(selectionBtn)
+        
+        selectionBtn.frame = CGRect(x: 85, y: 600, width: 200, height: 40)
     }
     
-    func setView(){
-        view.addSubview(capTeam)
-        view.addSubview(ironTeam)
-        
-        capTeam.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        capTeam.topAnchor.constraint(equalTo: view.topAnchor, constant: 150).isActive = true
-        capTeam.widthAnchor.constraint(equalToConstant: 250).isActive = true
-        capTeam.heightAnchor.constraint(equalToConstant: 200).isActive = true
-        
-        ironTeam.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        ironTeam.topAnchor.constraint(equalTo: view.topAnchor, constant: 400).isActive = true
-        ironTeam.widthAnchor.constraint(equalToConstant: 250).isActive = true
-        ironTeam.heightAnchor.constraint(equalToConstant: 200).isActive = true
-    }
 }
 

@@ -10,12 +10,21 @@ import UIKit
 
 class CaptainTeam: UIViewController {
     
-    let imageView: UIImageView = {
+    var selection: UIImage!
+    
+    lazy var imageView: UIImageView = {
         let iv = UIImageView()
-        iv.backgroundColor = .blue
         iv.translatesAutoresizingMaskIntoConstraints = false
+        iv.isUserInteractionEnabled = true
+        iv.backgroundColor = .blue
+        iv.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleView)))
         return iv
     }()
+    
+    @objc func handleView(){
+        print("work")
+        dismiss(animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,5 +37,10 @@ class CaptainTeam: UIViewController {
         imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 150).isActive = true
         imageView.widthAnchor.constraint(equalToConstant: 250).isActive = true
         imageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        print("=========== \(selection)")
+        imageView.image = selection
+        
     }
 }
+
+

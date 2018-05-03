@@ -12,7 +12,6 @@
 		8D22A83D2099E8380090646D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D22A83B2099E8380090646D /* Main.storyboard */; };
 		8D22A83F2099E8380090646D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D22A83E2099E8380090646D /* Assets.xcassets */; };
 		8D22A8422099E8380090646D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D22A8402099E8380090646D /* LaunchScreen.storyboard */; };
-		8D22A84A209A23A40090646D /* IronManTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D22A849209A23A40090646D /* IronManTeam.swift */; };
 		8D22A84C209A23C80090646D /* CaptainTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D22A84B209A23C80090646D /* CaptainTeam.swift */; };
 /* End PBXBuildFile section */
 
@@ -24,7 +23,6 @@
 		8D22A83E2099E8380090646D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D22A8412099E8380090646D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D22A8432099E8380090646D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8D22A849209A23A40090646D /* IronManTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IronManTeam.swift; sourceTree = "<group>"; };
 		8D22A84B209A23C80090646D /* CaptainTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptainTeam.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,7 +58,6 @@
 			children = (
 				8D22A8372099E8370090646D /* AppDelegate.swift */,
 				8D22A8392099E8370090646D /* ViewController.swift */,
-				8D22A849209A23A40090646D /* IronManTeam.swift */,
 				8D22A84B209A23C80090646D /* CaptainTeam.swift */,
 				8D22A83B2099E8380090646D /* Main.storyboard */,
 				8D22A83E2099E8380090646D /* Assets.xcassets */,
@@ -143,7 +140,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D22A83A2099E8370090646D /* ViewController.swift in Sources */,
-				8D22A84A209A23A40090646D /* IronManTeam.swift in Sources */,
 				8D22A8382099E8370090646D /* AppDelegate.swift in Sources */,
 				8D22A84C209A23C80090646D /* CaptainTeam.swift in Sources */,
 			);
