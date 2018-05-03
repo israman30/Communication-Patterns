@@ -8,6 +8,7 @@
 
 import UIKit
 
+// MARK: - setting protocol to select team
 protocol SelectYourSideDelegate {
     func  didSelectSide(img: UIImage, name: String, color: UIColor)
 }
@@ -40,9 +41,9 @@ class CaptainTeam: UIViewController {
         setTeamsView()
     }
     
-    
 }
 
+// MARK: - extension contain actions to select team
 extension CaptainTeam {
     @objc func handleCaptainSide(){
         selectedSideDelegate.didSelectSide(img: UIImage(named: "team-cap")!, name: "Captain Side", color: captainColor)
@@ -55,6 +56,7 @@ extension CaptainTeam {
     }
 }
 
+// MARK: - extensino sets selection view
 extension CaptainTeam {
     func setTeamsView(){
         view.backgroundColor = .white

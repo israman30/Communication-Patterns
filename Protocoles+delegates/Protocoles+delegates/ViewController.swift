@@ -40,6 +40,7 @@ class ViewController: UIViewController {
     
     @objc func handleSelectSide(){
         let captainController = CaptainTeam()
+        // MARK: - setting delegation from selection view to main view
         captainController.selectedSideDelegate = self
         present(captainController, animated: true, completion: nil)
     }
@@ -50,9 +51,9 @@ class ViewController: UIViewController {
         setView()
     }
     
-    
 }
 
+// MARK: - extension set protocole on main view
 extension ViewController: SelectYourSideDelegate {
     func didSelectSide(img: UIImage, name: String, color: UIColor) {
         imageView.image = img
@@ -61,15 +62,14 @@ extension ViewController: SelectYourSideDelegate {
     }
 }
 
+// MARK: - extension sets main view
 extension ViewController {
     
     func setView(){
         
         view.backgroundColor = civilWarColor
         
-        view.addSubview(selectionBtn)
-        view.addSubview(imageView)
-        view.addSubview(sideLabel)
+        [selectionBtn, imageView, sideLabel].forEach({view.addSubview($0)})
         
         selectionBtn.frame = CGRect(x: 85, y: 600, width: 200, height: 40)
         
