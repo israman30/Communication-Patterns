@@ -71,7 +71,8 @@ extension ViewController {
         
         [selectionBtn, imageView, sideLabel].forEach({view.addSubview($0)})
         
-        selectionBtn.frame = CGRect(x: 85, y: 600, width: 200, height: 40)
+        selectionBtn.frame = CGRect(x: 12, y: 600, width: 350, height: 40)
+        selectionBtn.layer.cornerRadius = 5
         
         imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 200).isActive = true
