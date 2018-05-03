@@ -101,6 +101,9 @@ func createObservers(){
 
 ```
 
+| <img src="img/cap.png" alt="main" width="250" height="500" /> <img src="img/iron.png" alt="main" width="250" height="500" /> |
+| *Once you pick a team. The receiver send/Broadcast a Notifcation to the app and the main will observe this notificaion using a key value to identify the data that should be displayed* |
+
 
 
 
