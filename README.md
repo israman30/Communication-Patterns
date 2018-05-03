@@ -34,6 +34,8 @@ extension ViewController: SelectYourSideDelegate {
     present(captainController, animated: true, completion: nil)
 }
 ```
+### How this works on the app..???
+
 | <img src="img/main.png" alt="main" width="250" height="500" /> <img src="img/sender.png" alt="main" width="250" height="500" /> |
 |:--:|
 | *Main and Sender.- "Pick a Team"* |
