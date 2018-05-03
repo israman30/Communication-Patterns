@@ -8,6 +8,8 @@
 
 import UIKit
 
+let civilWarColor = UIColor(red: 64/255, green: 64/255, blue: 64/255, alpha: 1)
+
 class ViewController: UIViewController {
     
     let imageView: UIImageView = {
@@ -46,7 +48,26 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor(red: 64/255, green: 64/255, blue: 64/255, alpha: 1)
+        setView()
+    }
+    
+    
+    
+}
+
+extension ViewController: SelectYourSideDelegate {
+    func didSelectSide(img: UIImage, name: String, color: UIColor) {
+        imageView.image = img
+        sideLabel.text = name
+        view.backgroundColor = color
+    }
+}
+
+extension ViewController {
+    
+    func setView(){
+        
+        view.backgroundColor = civilWarColor
         
         view.addSubview(selectionBtn)
         view.addSubview(imageView)
@@ -57,21 +78,12 @@ class ViewController: UIViewController {
         imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 200).isActive = true
         imageView.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
-        imageView.heightAnchor.constraint(equalToConstant: 250).isActive = true
-    
+        imageView.heightAnchor.constraint(equalToConstant: 245).isActive = true
+        
         sideLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         sideLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 440).isActive = true
         sideLabel.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
         sideLabel.heightAnchor.constraint(equalToConstant: 80).isActive = true
-    }
-    
-}
-
-extension ViewController: SelectYourSideDelegate {
-    func didSelectSide(img: UIImage, name: String, color: UIColor) {
-        imageView.image = img
-        sideLabel.text = name
-        view.backgroundColor = color
     }
 }
 
