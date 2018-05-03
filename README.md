@@ -2,7 +2,7 @@
 
 ![alt text](img/swift.png)
 
-How to communicate the view controllers with each other, using different patterns.
+==How to communicate the view controllers with each other, using different patterns.==
 
 ## Protocols and Delegations
 
