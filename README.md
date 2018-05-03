@@ -25,4 +25,12 @@ extension ViewController: SelectYourSideDelegate {
         view.backgroundColor = color
     }
 }
+
+// Wher the sender is instantiated we set it as delegate
+@objc func handleSelectSide(){
+    let captainController = CaptainTeam()
+    // MARK: - setting delegation from selection view to main view
+    captainController.selectedSideDelegate = self
+    present(captainController, animated: true, completion: nil)
+}
 ```
