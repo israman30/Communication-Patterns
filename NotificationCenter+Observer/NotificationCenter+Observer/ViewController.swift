@@ -25,40 +25,6 @@ class ViewController: UIViewController {
         NotificationCenter.default.removeObserver(self)
     }
     
-    // MARK: - Add Observer
-    /* This function will observe the broadcast information sent it by the selection VC, using key values for each observer.
-    */
-    func createObservers(){
-        // Steve Rogers Observers
-        NotificationCenter.default.addObserver(self, selector: #selector(updateImage(notf:)), name: steve, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(updateName(notf:)), name: steve, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(updateView(notf:)), name: steve, object: nil)
-        
-        // Tony Stark Observers
-        NotificationCenter.default.addObserver(self, selector: #selector(updateImage(notf:)), name: tony, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(updateName(notf:)), name: tony, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(updateView(notf:)), name: tony, object: nil)
-    }
-    
-    // MARK: - Action block checks rather is there information for either team and trigger the data as soon observer find the right key.
-    @objc func updateImage(notf: NSNotification){
-        let isCapTeam = notf.name == steve
-        let img = isCapTeam ? UIImage(named: "team-cap")! : UIImage(named: "team-iron")!
-        imageView.image = img
-    }
-    
-    @objc func updateName(notf: NSNotification){
-        let isCapTeam = notf.name == steve
-        let name = isCapTeam ? "Captain Team" : "Iron Man Team"
-        sideLabel.text = name
-    }
-    
-    @objc func updateView(notf: NSNotification){
-        let isCapTeam = notf.name == steve
-        let viewColor = isCapTeam ? captainColor : ironManColor
-        view.backgroundColor = viewColor
-    }
-    
     let imageView: UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage(named: "civil")
@@ -96,6 +62,43 @@ class ViewController: UIViewController {
         view.backgroundColor = .white
         setView()
         createObservers()
+    }
+}
+
+// MARK: - extension to storage the obseververs
+extension ViewController {
+    // MARK: - Add Observer
+    /* This function will observe the broadcast information sent it by the selection VC, using key values for each observer.
+     */
+    func createObservers(){
+        // Steve Rogers Observers
+        NotificationCenter.default.addObserver(self, selector: #selector(updateImage(notf:)), name: steve, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateName(notf:)), name: steve, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateView(notf:)), name: steve, object: nil)
+        
+        // Tony Stark Observers
+        NotificationCenter.default.addObserver(self, selector: #selector(updateImage(notf:)), name: tony, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateName(notf:)), name: tony, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateView(notf:)), name: tony, object: nil)
+    }
+    
+    // MARK: - Action block checks rather is there information for either team and trigger the data as soon observer find the right key.
+    @objc func updateImage(notf: NSNotification){
+        let isCapTeam = notf.name == steve
+        let img = isCapTeam ? UIImage(named: "team-cap")! : UIImage(named: "team-iron")!
+        imageView.image = img
+    }
+    
+    @objc func updateName(notf: NSNotification){
+        let isCapTeam = notf.name == steve
+        let name = isCapTeam ? "Captain Team" : "Iron Man Team"
+        sideLabel.text = name
+    }
+    
+    @objc func updateView(notf: NSNotification){
+        let isCapTeam = notf.name == steve
+        let viewColor = isCapTeam ? captainColor : ironManColor
+        view.backgroundColor = viewColor
     }
 }
 
