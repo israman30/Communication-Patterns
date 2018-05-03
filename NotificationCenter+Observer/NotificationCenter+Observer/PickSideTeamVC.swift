@@ -8,10 +8,11 @@
 
 import UIKit
 
+let captainColor = UIColor(red: 0/255, green: 26/255, blue: 77/255, alpha: 1)
+let ironManColor = UIColor(red: 128/255, green: 0/255, blue: 0/255, alpha: 1)
+
 class PickSideTeamVC: UIViewController {
     
-    let captainColor = UIColor(red: 0/255, green: 26/255, blue: 77/255, alpha: 1)
-    let ironManColor = UIColor(red: 128/255, green: 0/255, blue: 0/255, alpha: 1)
     
     lazy var imageView: UIImageView = {
         let iv = UIImageView(image: UIImage(named: "ca"))
