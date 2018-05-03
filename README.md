@@ -34,5 +34,5 @@ extension ViewController: SelectYourSideDelegate {
     present(captainController, animated: true, completion: nil)
 }
 ```
-<img src="img/main.png" alt="main" style="width: 50px;"/>
+<img src="img/main.png" alt="main" width="50" height="200" />
 ![alt text](img/main.png =220x)
