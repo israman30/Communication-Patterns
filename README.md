@@ -105,7 +105,7 @@ func createObservers(){
 
 | <img src="img/main.png" alt="main" width="250" height="500" /> <img src="img/sender.png" alt="main" width="250" height="500" /> |
 |:--:|
-| *Once you pick a team. The selection VC send/Broadcast a Notifcation to the app and the main VC will observe this notification using a key value to identify the data that should be displayed* |
+| *Once you pick a team. The selection VC send/Broadcast a Notifcation to the app and the main VC will observe this notification using a key value to identify the data that should be displayed. In this case should be an observer for Captain Team and other for Iron Man Team. * |
 
 
 
