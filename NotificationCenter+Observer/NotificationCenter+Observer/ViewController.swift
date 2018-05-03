@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     let steve = Notification.Name(captainTeamKey)
     let tony = Notification.Name(ironManTeamKey)
     
-    // MARK: - We remove the observer after these are been used - deinit will deallocate them from memory.
+    // MARK: - We remove the observer after these are been used - deinit will deallocate the observers from memory.
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
