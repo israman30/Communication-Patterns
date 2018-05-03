@@ -43,7 +43,7 @@ class PickSideTeamVC: UIViewController {
 extension PickSideTeamVC {
     @objc func handleCaptainSide(){
         let name = Notification.Name(rawValue: captainTeamKey)
-        // This line sends a notification that the button was tapped
+        // This line sends/broadcast a notification when the button is tapped.
         NotificationCenter.default.post(name: name, object: nil)
         dismiss(animated: true, completion: nil)
     }
@@ -56,7 +56,7 @@ extension PickSideTeamVC {
     }
 }
 
-// MARK: - extensino sets selection view
+// MARK: - extension sets selection view
 extension PickSideTeamVC {
     func setTeamsView(){
         view.backgroundColor = .white
