@@ -12,10 +12,10 @@ protocol SelectYourSideDelegate {
     func  didSelectSide(img: UIImage, name: String, color: UIColor)
 }
 
-let captainColor = UIColor(red: 0/255, green: 26/255, blue: 77/255, alpha: 1)
-let ironManColor = UIColor(red: 128/255, green: 0/255, blue: 0/255, alpha: 1)
-
 class CaptainTeam: UIViewController {
+    
+    let captainColor = UIColor(red: 0/255, green: 26/255, blue: 77/255, alpha: 1)
+    let ironManColor = UIColor(red: 128/255, green: 0/255, blue: 0/255, alpha: 1)
     
     var selectedSideDelegate: SelectYourSideDelegate!
     
@@ -35,8 +35,16 @@ class CaptainTeam: UIViewController {
         return iv
     }()
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setTeamsView()
+    }
+    
+    
+}
+
+extension CaptainTeam {
     @objc func handleCaptainSide(){
-        print("work")
         selectedSideDelegate.didSelectSide(img: UIImage(named: "team-cap")!, name: "Captain Side", color: captainColor)
         dismiss(animated: true, completion: nil)
     }
@@ -45,10 +53,10 @@ class CaptainTeam: UIViewController {
         selectedSideDelegate.didSelectSide(img: UIImage(named: "team-iron")!, name: "Iron Man Side", color: ironManColor)
         dismiss(animated: true, completion: nil)
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+}
+
+extension CaptainTeam {
+    func setTeamsView(){
         view.backgroundColor = .white
         
         view.addSubview(imageView)
@@ -63,8 +71,8 @@ class CaptainTeam: UIViewController {
         imageView2.topAnchor.constraint(equalTo: view.topAnchor, constant: 400).isActive = true
         imageView2.widthAnchor.constraint(equalToConstant: 250).isActive = true
         imageView2.heightAnchor.constraint(equalToConstant: 200).isActive = true
-        
     }
+    
 }
 
 

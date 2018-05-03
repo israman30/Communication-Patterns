@@ -8,9 +8,9 @@
 
 import UIKit
 
-let civilWarColor = UIColor(red: 64/255, green: 64/255, blue: 64/255, alpha: 1)
-
 class ViewController: UIViewController {
+    
+    let civilWarColor = UIColor(red: 64/255, green: 64/255, blue: 64/255, alpha: 1)
     
     let imageView: UIImageView = {
         let iv = UIImageView()
@@ -42,7 +42,6 @@ class ViewController: UIViewController {
         let captainController = CaptainTeam()
         captainController.selectedSideDelegate = self
         present(captainController, animated: true, completion: nil)
-        print("Select Side")
     }
     
     override func viewDidLoad() {
@@ -50,7 +49,6 @@ class ViewController: UIViewController {
         
         setView()
     }
-    
     
     
 }
